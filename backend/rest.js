@@ -14,27 +14,19 @@ mongoose.connect("mongodb+srv://GrimbleTT:K1rkw00d!5409@nchq.bi3fqgw.mongodb.net
         console.log('Failed to connect to MongoDB');
     });
 
-    module.exports = app;
 
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Modules', 'GET, POST, PUT, DELETE, OPTIONS');
-    console.log("Headers work");
+
+app.get('/signup', function (req, res, next) {
+    res.render('/signup');
     next();
 });
 
-app.get('/signup', function(req, res, next) {
-    res.send("Got");
-    next();
-});
-
-app.post('/signup', (req, res, next) => {
+app.post('/signup', (req, res) => {
 
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
@@ -46,11 +38,25 @@ app.post('/signup', (req, res, next) => {
                 games: req.body.games,
                 emailCheck: req.body.emailCheck,
                 sms: req.body.sms
-            })
+            });
 
             userModel.save()
-            console.log("User Created!");
-            
-        })
-        next();
-}); 
+
+                .then(result => {
+                    return res.status(201).json({
+                        messege: 'User Created!',
+                        result: result
+                    })
+                })
+                .catch(err => {
+                    return res.status(500).json({
+                        error: err
+                    })
+                })
+        });
+});
+
+
+module.exports = app;
+
+

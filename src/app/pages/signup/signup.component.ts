@@ -11,6 +11,7 @@ import { AuthService } from '../../../../backend/auth-service';
 export class SignupComponent implements OnInit{
 
   signupForm!: FormGroup;
+  pwdWarning!: String;
 
   constructor(private authService: AuthService){}
 
@@ -29,7 +30,19 @@ export class SignupComponent implements OnInit{
   }
 
   onSubmit(){
-    this.authService.signupUser(this.signupForm.value.username, this.signupForm.value.password, this.signupForm.value.email, this.signupForm.value.phonenumber, this.signupForm.value.games, this.signupForm.value.emailCheck, this.signupForm.value.sms);
+
+    try {
+      if (this.signupForm.value.password == this.signupForm.value.cpassword){
+        this.authService.signupUser(this.signupForm.value.username, this.signupForm.value.password, this.signupForm.value.email, this.signupForm.value.phonenumber, this.signupForm.value.games, this.signupForm.value.emailCheck, this.signupForm.value.sms);
+      } else {
+        throw(Error);
+      }
+    } catch (error) {
+      console.log("Passwords do not match");
+      document.getElementById('pwdMatch')!.innerHTML = ('<p style="color: red;"> Passwords do not match!</p>');
+
+    }
+
   }
 
 }
