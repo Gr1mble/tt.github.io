@@ -1,0 +1,39 @@
+
+.container{
+    margin: 5vw auto;
+    max-width: 25vw;
+    text-align: center;
+    border: black 5px solid;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: #ffffff;
+}
+
+
+.form-control{
+    margin-top: 5px;
+    border: black 2px solid;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+input:invalid {
+    border: 2px solid red;
+  }
+  
+  input:valid {
+    border: 2px solid green;
+  }
+
+p{
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .container{
+        margin: auto;
+        max-width: max-content;
+    }
+}
+ 

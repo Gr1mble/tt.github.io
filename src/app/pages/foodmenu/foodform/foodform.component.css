@@ -1,0 +1,15 @@
+.content {
+    padding-top: 50px;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 750px;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: -1px;
+    font-size: 30px;
+}

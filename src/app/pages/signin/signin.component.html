@@ -1,0 +1,21 @@
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]='signinForm'>
+        <h1>Sign In</h1>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" formContraName="username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" formContraName="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <br><br>
+
+        <p>Dont have an account? Sign up below!</p>
+            <button type="button" (click)="router.navigate(['/signup']);" class="btn btn-secondary">Sign up!</button>
+    </form>
+</div>
