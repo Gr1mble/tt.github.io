@@ -26,7 +26,6 @@ export class SignupComponent implements OnInit{
         'emailCheck': new FormControl('', [Validators.required]),
         'sms': new FormControl('', [Validators.required])
       })
-      
   }
 
   onSubmit(){

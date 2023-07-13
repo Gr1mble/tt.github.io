@@ -1,7 +1,7 @@
 <div class="container">
 
     <h1>Sign Up</h1>
-    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm" action="http://localhost:4200/signin" method="post">
+    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
         <div class="form-group">
         <div class="col mb-3">
             <label for="username" class="row-sm-3 row-form-label">RaceName</label>
@@ -48,7 +48,7 @@
             <p>Would you like to opt into the Race Games?</p>
             <div class="form-check form-check-inline">
                 <label class="form-check-label" for="games">Games</label>
-                <input class="form-check-input" type="checkbox" formControlName="games" [defaultValue]="false">
+                <input class="form-check-input" type="checkbox" formControlName="games">
             </div>
         </div>
 
@@ -58,12 +58,12 @@
 
             <div class="form-check form-check-inline">
                 <label class="form-check-label" for="emailCheck">Email</label>
-                <input class="form-check-input" type="checkbox" formControlName="emailCheck" [defaultValue]="false">
+                <input class="form-check-input" type="checkbox" formControlName="emailCheck">
             </div>
 
             <div class="form-check form-check-inline">
                 <label class="form-check-label" for="sms">SMS</label>
-                <input class="form-check-input" type="checkbox" formControlName="sms" [defaultValue]="false">
+                <input class="form-check-input" type="checkbox" formControlName="sms">
             </div>
         </div>
     </div>

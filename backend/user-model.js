@@ -6,9 +6,9 @@ const userSchema = mongoose.Schema({
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     phonenumber: {type: String, required: true},
-    games: {type: Boolean, required: false, defaultValue: false},
-    emailCheck: {type: Boolean, required: false, defaultValue: false},
-    sms: {type: Boolean, required: false, defaultValue: false},
+    games: {type: String, required: false, defaultValue: false},
+    emailCheck: {type: String, required: false, defaultValue: false},
+    sms: {type: String, required: false, defaultValue: false},
 
 });
 

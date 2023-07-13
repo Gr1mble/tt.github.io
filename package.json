@@ -25,6 +25,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.2",
     "mongoose-unique-validator": "^4.0.0",
@@ -45,9 +46,5 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "npm-force-resolutions": "^0.0.10",
     "typescript": "~5.0.2"
-  },
-  "proxy": "http://localhost:3000",
-  "resolutions": {
-    "https-proxy-agent": "^3.0.0"
   }
 }
