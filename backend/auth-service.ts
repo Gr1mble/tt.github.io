@@ -2,11 +2,22 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthModelSignin, AuthModelSignup} from "backend/auth-model";
+import { Subject } from "rxjs";
 
 @Injectable({providedIn:"root"})
 export class AuthService{
 
     private token!: string;
+    private authenticatedSub = new Subject<boolean>();
+    private isAuthenticated = false;
+
+    getAuthenticatedSub(){
+      return this.authenticatedSub.asObservable();  
+    };
+
+    getIsAuthenticated(){
+        return this.isAuthenticated;
+    }
 
     getToken(){
         return this.token;
@@ -37,8 +48,8 @@ loginUser(username: string, password: string){
         this.http.post<{token: string}>('http://localhost:3000/signin', authData, {responseType: 'json' as const}).subscribe(res => {
             this.token = res.token;
             if(this.token){
-                //this.authenticatedSub.next(true);
-                //this.isAuthenticated = true;
+                this.authenticatedSub.next(true);
+                this.isAuthenticated = true;
                 this.router.navigate(['/']);
             }
         });
@@ -47,6 +58,13 @@ loginUser(username: string, password: string){
     }
 
 
-}
+};
+
+logOut(){
+    this.token = '';
+    this.isAuthenticated = false;
+    this.authenticatedSub.next(false);
+    this.router.navigate(['/']);
+  };
 
 }
