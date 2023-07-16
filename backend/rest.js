@@ -115,7 +115,8 @@ app.post('/signin', (req, res) => {
 
             const token = jwt.sign({ username: userFound.username, userId: userFound._id }, "secret_string", { expiresIn: "1h" });
             return res.send({
-                token: token
+                token: token,
+                expiresIn: 3600
             });
         })
         .catch(err => {

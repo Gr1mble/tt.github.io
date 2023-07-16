@@ -46,7 +46,7 @@
             <a *ngIf="userAuthenticated" class="nav-link" routerLink="profile" routerLinkActive="active-link">Profile</a>
           </li>
           <li class="nav-item">
-            <a *ngIf="userAuthenticated" class="nav-link" (click)="logOut()" routerLink="home" routerLinkActive="active-link">Logout</a>
+            <a *ngIf="userAuthenticated" class="nav-link" (click)="logOut()" routerLink="home">Logout</a>
           </li>
         </ul>
       </div>

@@ -13,6 +13,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
+import { RouteGuard } from 'backend/route-guard';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -27,11 +28,12 @@ const routes: Routes = [
   {path:'bracketgenerator', component:BracketgeneratorComponent},
   {path:'signin', component:SigninComponent},
   {path:'signup', component:SignupComponent},
-  {path:'profile', component:ProfileComponent}
+  {path:'profile', component:ProfileComponent, canActivate:[RouteGuard]}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [RouteGuard]
 })
 export class AppRoutingModule { }
