@@ -7,19 +7,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
-
-// Database Connection
-
-mongoose.connect("mongodb+srv://GrimbleTT:K1rkw00d!5409@nchq.bi3fqgw.mongodb.net/userdb?retryWrites=true&w=majority")
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch(() => {
-        console.log('Failed to connect to MongoDB');
-    });
-
-// End of Database Connection
-
+const url = "mongodb+srv://GrimbleTT:K1rkw00d!5409@nchq.bi3fqgw.mongodb.net/userdb?retryWrites=true&w=majority";
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -62,70 +50,89 @@ app.get('/signin', function (req, res) {
 
 app.post('/signup', (req, res) => {
 
-    try {
-        bcrypt.hash(req.body.password, 10)
+    mongoose.connect(url)
+        .then(() => {
+            console.log('Connected to MongoDB');
 
-            .then(function (hash) {
-                const userModel = new UserModel({
-                    username: req.body.username,
-                    password: hash,
-                    email: req.body.email,
-                    phonenumber: req.body.phonenumber,
-                    games: req.body.games,
-                    emailCheck: req.body.emailCheck,
-                    sms: req.body.sms
-                });
+            try {
+                bcrypt.hash(req.body.password, 10)
 
-                userModel.save()
+                    .then(function (hash) {
+                        const userModel = new UserModel({
+                            username: req.body.username,
+                            password: hash,
+                            email: req.body.email,
+                            phonenumber: req.body.phonenumber,
+                            games: req.body.games,
+                            emailCheck: req.body.emailCheck,
+                            sms: req.body.sms
+                        });
 
-                    .then(result => {
-                        console.log(result + "User Created!");
-                        return res.send({ message: 'User Created!' })
-                        //mongoose.connection.close();
+                        userModel.save()
+
+                            .then(result => {
+                                console.log(result + "User Created!");
+                                mongoose.connection.close();
+                                console.log('Connection to MongoDB Closed');
+                                return res.send({ message: 'User Created!' })
+                            })
+                            .catch(err => {
+                                console.log(err + " Failed to Create User!");
+                            })
                     })
-                    .catch(err => {
-                        console.log(err + " Failed to Create User!");
-                    })
-            })
-    } catch (error) {
-        console.log(error + "Failed to Create User!");
-    }
+            } catch (error) {
+                console.log(error + "Failed to Create User!");
+            }
 
-
-});
-
-app.post('/signin', (req, res) => {
-
-    let userFound;
-
-    UserModel.findOne({ username: req.body.username })
-        .then(user => {
-            if (!user) {
-                return res.send({message: 'User Not Found!'});
-            };
-
-            userFound = user;
-
-            return bcrypt.compare(req.body.password, user.password);
         })
-        .then(result => {
-            if (!result) {
-                return res.send({messege: 'Password is Incorrect!'});
-            };
-
-            const token = jwt.sign({ username: userFound.username, userId: userFound._id }, "secret_string", { expiresIn: "1h" });
-            return res.send({
-                token: token,
-                expiresIn: 3600
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            return res.send({message: 'Error with Authentication'});
+        .catch(() => {
+            console.log('Failed to connect to MongoDB');
         });
 });
 
 
+app.post('/signin', (req, res) => {
+
+    mongoose.connect(url)
+        .then(() => {
+            console.log('Connected to MongoDB');
+
+            let userFound;
+
+            UserModel.findOne({ username: req.body.username })
+                .then(user => {
+                    if (!user) {
+                        return res.send({ message: 'User Not Found!' });
+                    };
+
+                    userFound = user;
+
+                    return bcrypt.compare(req.body.password, user.password);
+                })
+                .then(result => {
+                    if (!result) {
+                        return res.send({ messege: 'Password is Incorrect!' });
+                    };
+
+                    const token = jwt.sign({ username: userFound.username, userId: userFound._id }, "secret_string", { expiresIn: "1h" });
+                    mongoose.connection.close();
+                    console.log('Connection to MongoDB Closed');
+                    return res.send({
+                        token: token,
+                        expiresIn: 3600
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                    return res.send({ message: 'Error with Authentication' });
+                });
+
+        })
+        .catch(() => {
+            console.log('Failed to connect to MongoDB');
+        });
+
+});
 
 
 module.exports = app;
