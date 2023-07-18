@@ -28,7 +28,6 @@ mongoose.connect(url)
           for(let i = 0; i < users.length; i ++){
             gamesArray[i] = users[i].username;
             console.log(gamesArray[i]);
-            buffer
           }
 
         })
