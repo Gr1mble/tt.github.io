@@ -1,8 +1,3 @@
-.navbar-expand-lg .navbar-nav .nav-link.active-link {
-    background-color: white;
-    color: black;
-}
-
 .navbar-expand-lg .navbar-nav .nav-link {
 color: white;
 }
@@ -15,36 +10,65 @@ color: white;
     padding: 0;
 }
 
-.nav-item {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
 .topNav {
-    padding-top: 15px;
+    padding-top: 10px;
     background-color: black;
     text-align: center;
+}
+
+.collapse, .navbar-collapse, .justify-content-center{
     padding-bottom: 15px;
 }
 
-.navbarPicture{
+.navbarPicture, .d-none d-lg-block{
     border: 3px;
     border-radius: 5px;
+    max-height: 36px;
+    margin-right: 15px;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav-item:hover {
-background-color: gray;
-}
+.nav-item {
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+  }
+  .nav-item:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  .nav-item:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+  .navbar-nav .nav-item .nav-link.active-link {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 9px;
+  }
 
 @media (max-width: 900px) {
     .navbar-collapse {
         position: fixed;
-        top: 109px;
+        top: 55px;
         padding-top: 15px;
-        padding-left: 15px;
+        padding-left: 50px;
         padding-right: 15px;
         padding-bottom: 15px;
         width: 50%;
@@ -66,9 +90,18 @@ background-color: gray;
         transition: left 500ms ease-in-out;
     }
     .navbar-toggler, .navbar-toggler-icon{
-        float: right;
+        float: left;
     }
     .container-fluid{
         display: inline;
+        background-color: black;
     }
+
+    .navbarPicture, .d-lg-none{
+        margin: 0 auto;
+        margin-right: 45px;
+        margin-bottom: 10px;
+
+    }
+
 }
