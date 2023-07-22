@@ -1,73 +1,81 @@
-<div class="container">
+<div class="container-fluid">
+    <div class="container">
 
-    <h1>Sign Up</h1>
-    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
-        <div class="form-group">
-        <div class="col mb-3">
-            <label for="username" class="row-sm-3 row-form-label">RaceName</label>
-            <div class="row-sm-8">
-                <input type="text" class="form-control" formControlName="username" required>
-            </div>
-            <div *ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)" class="alert">
-                <div *ngIf="signupForm.controls['username'].errors?.['required']">
-                Please enter username
-              </div>
-        </div>
-        <div class="col mb-3">
-            <label for="email" class="row-sm-3 row-form-label">Email</label>
-            <div class="row-sm-8">
-                <input type="email" class="form-control" formControlName="email" placeholder="YourEmail@email.com" required>
-            </div>
-        </div>
-        <div class="col mb-3">
-            <label for="phonenumber" class="row-sm-3 row-form-label">PhoneNumber</label>
-            <div class="row-sm-8">
-                <input mobMask type="tel" class="form-control" formControlName="phonenumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-            </div>
-        </div>
-        <div class="col mb-3">
-            <label for="password" class="row-sm-3 row-form-label">Password</label>
-            <div class="row-sm-8">
-                <input type="password" class="form-control" formControlName="password" required>
-            </div>
-            <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)" class="alert">
-                <div *ngIf="signupForm.controls['password'].errors?.['required']">
-                Please enter Password
-              </div>
-        </div>
-        <div class="col mb-3">
-            <label for="cpassword" class="row-sm-3 row-form-label">Confirm Password</label>
-            <div class="row-sm-8">
-                <input type="password" class="form-control" formControlName="cpassword" required>
-            </div>
-            <div id="pwdMatch" >
-            </div>
-        </div>
+        <h1>Sign Up</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+            <div class="form-group">
+                <div class="col mb-3">
+                    <label for="username" class="row-sm-3 row-form-label">RaceName</label>
+                    <div class="row-sm-8">
+                        <input type="text" class="form-control" formControlName="username" required>
+                    </div>
+                    <div *ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)"
+                        class="alert">
+                        <div *ngIf="signupForm.controls['username'].errors?.['required']">
+                            Please enter username
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="email" class="row-sm-3 row-form-label">Email</label>
+                        <div class="row-sm-8">
+                            <input type="email" class="form-control" formControlName="email"
+                                placeholder="YourEmail@email.com" required>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="phonenumber" class="row-sm-3 row-form-label">PhoneNumber</label>
+                        <div class="row-sm-8">
+                            <input mobMask type="tel" class="form-control" formControlName="phonenumber"
+                                placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="password" class="row-sm-3 row-form-label">Password</label>
+                        <div class="row-sm-8">
+                            <input type="password" class="form-control" formControlName="password" required>
+                        </div>
+                        <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)"
+                            class="alert">
+                            <div *ngIf="signupForm.controls['password'].errors?.['required']">
+                                Please enter Password
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="cpassword" class="row-sm-3 row-form-label">Confirm Password</label>
+                            <div class="row-sm-8">
+                                <input type="password" class="form-control" formControlName="cpassword" required>
+                            </div>
+                            <div id="pwdMatch">
+                            </div>
+                        </div>
 
-        <div class="col mb-3">
-            <p>Would you like to opt into the Race Games?</p>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label" for="games">Games</label>
-                <input class="form-check-input" type="checkbox" formControlName="games">
+                        <div class="col mb-3">
+                            <p>Would you like to opt into the Race Games?</p>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="games">Games</label>
+                                <input class="form-check-input" type="checkbox" formControlName="games">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <p>Notification Preferences</p>
+                            <div class="col-sm-8 offset-sm-2">
+
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="emailCheck">Email</label>
+                                    <input class="form-check-input" type="checkbox" formControlName="emailCheck">
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="sms">SMS</label>
+                                    <input class="form-check-input" type="checkbox" formControlName="sms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
+        </form>
         </div>
-
-        <div class="row mb-3">
-            <p>Notification Preferences</p>
-            <div class="col-sm-8 offset-sm-2">
-
-            <div class="form-check form-check-inline">
-                <label class="form-check-label" for="emailCheck">Email</label>
-                <input class="form-check-input" type="checkbox" formControlName="emailCheck">
-            </div>
-
-            <div class="form-check form-check-inline">
-                <label class="form-check-label" for="sms">SMS</label>
-                <input class="form-check-input" type="checkbox" formControlName="sms">
-            </div>
         </div>
-    </div>
-</div>
-        <button  type="submit" class="btn btn-primary">Submit</button>
-
-</div>
