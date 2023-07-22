@@ -66,14 +66,14 @@ body {
 @media (max-width: 990px) {
     .navbar-collapse {
         position: fixed;
-        top: 55px;
-        padding-top: 15px;
-        padding-left: 50px;
+        top: 0;
+        padding-top: 65px;
+        padding-left: 30px;
         padding-right: 15px;
         padding-bottom: 15px;
         width: 50%;
         height: 100%;
-        z-index: 5;
+        z-index: -1;
     }
 
     .navbar-collapse.collapsing {
@@ -95,6 +95,7 @@ body {
     .container-fluid{
         display: inline;
         background-color: black;
+        z-index: 4;
     }
 
     .navbarPicture, .d-lg-none{

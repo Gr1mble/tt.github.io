@@ -4,7 +4,15 @@
     display: block;
     margin: 0 auto;
     height: auto;
+    width: 90vw;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     word-wrap: normal;
+}
+
+img {
+    margin: 0 auto;
+    max-width: 300px;
+    max-height: 280px;
+    object-fit: contain;
 }
