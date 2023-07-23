@@ -1,6 +1,6 @@
 .container-fluid {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     display: block;
     margin: 0 auto;
     height: auto;
@@ -12,4 +12,41 @@
 .form-select {
     margin: 0 auto;
     width: fit-content;
+    border: black 2px solid;
+    border-radius: 5px;
+}
+option {
+    border: black 2px solid;
+    border-radius: 5px;
+}
+
+option:hover {
+    background-color: black;
+    color: white;
+}
+
+.accordion {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.accordion-button {
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: black;
+    color: #cc0000;
+
+}
+
+@media (max-width: 600px) {
+    #rainbowImg{
+        width: 100%;
+        border: 3px linen;
+        border-radius: 5px;
+    } 
 }

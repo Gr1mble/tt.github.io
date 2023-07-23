@@ -22,7 +22,6 @@ export class GamesComponent {
 		this.selectedYear = parseInt(this.year.nativeElement.value);
     console.log(this.selectedYear);
 
-
     this.poker.nativeElement.innerHTML = "Poker: " + this.pokerArray[this.selectedYear];
     this.euchre.nativeElement.innerHTML = "Euchre: " + this.euchreArray[this.selectedYear];
     this.darts.nativeElement.innerHTML = "Darts: " + this.dartsArray[this.selectedYear];
