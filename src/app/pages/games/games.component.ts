@@ -12,14 +12,14 @@ export class GamesComponent {
   @ViewChild('dartsRef') darts!: ElementRef;
   @ViewChild('horseShoesRef') horseshoes!: ElementRef;
 
-  selectedYear:number = 0;
-  
-  constructor(){
+  selectedYear: number = 0;
+
+  constructor() {
 
   }
 
-	gameWinners(yearInput: HTMLSelectElement):void {
-		this.selectedYear = parseInt(this.year.nativeElement.value);
+  gameWinners(yearInput: HTMLSelectElement): void {
+    this.selectedYear = parseInt(this.year.nativeElement.value);
     console.log(this.selectedYear);
 
     this.poker.nativeElement.innerHTML = "Poker: " + this.pokerArray[this.selectedYear];
@@ -28,7 +28,7 @@ export class GamesComponent {
     this.horseshoes.nativeElement.innerHTML = "HorseShoes: " + this.horseShoeArray[this.selectedYear];
   }
 
-   pokerArray = [
+  pokerArray = [
     ["Sassy Sara"],
     ["Mars"],
     ["Kottin"],
@@ -43,7 +43,7 @@ export class GamesComponent {
     ["Joltin' Joe III"]
   ]
 
-   euchreArray = [
+  euchreArray = [
     ["Sassy Sara"],
     ["Sassy Sara / Joltin' Joe III"],
     ["Sassy Sara / Cara"],
@@ -70,8 +70,8 @@ export class GamesComponent {
     ["Woody / Kottin"],
     ["Kottin / Methy"],
     ["KylePetty / Jukebox Jon"]
-]
- horseShoeArray = [
+  ]
+  horseShoeArray = [
     ["Sassy Sara"],
     ["Mars / Fong Shui"],
     ["Sassy Sara / Cara"],
@@ -84,5 +84,5 @@ export class GamesComponent {
     ["Woody / Kottin"],
     ["Sassy Sara / Jukebox Jon"],
     ["Sassy Sara / Joltin' Joe III"]
-]
+  ]
 }

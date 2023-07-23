@@ -16,19 +16,19 @@ import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component'
 import { RouteGuard } from 'backend/route-guard';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'home', component:HomeComponent},
-  {path:'history', component:HistoryComponent},
-  {path:'racesigns', component:RacesignsComponent},
-  {path:'games', component:GamesComponent},
-  {path:'foodmenu', component:FoodmenuComponent},
-  {path:'foodform', component:FoodformComponent},
-  {path:'triplecrown', component:TriplecrownComponent},
-  {path:'gamesigns', component:GamesignsComponent},
-  {path:'bracketgenerator', component:BracketgeneratorComponent},
-  {path:'signin', component:SigninComponent},
-  {path:'signup', component:SignupComponent},
-  {path:'profile', component:ProfileComponent, canActivate:[RouteGuard]}
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'racesigns', component: RacesignsComponent },
+  { path: 'games', component: GamesComponent },
+  { path: 'foodmenu', component: FoodmenuComponent },
+  { path: 'foodform', component: FoodformComponent },
+  { path: 'triplecrown', component: TriplecrownComponent },
+  { path: 'gamesigns', component: GamesignsComponent },
+  { path: 'bracketgenerator', component: BracketgeneratorComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [RouteGuard] }
 ];
 
 @NgModule({

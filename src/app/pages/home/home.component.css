@@ -9,24 +9,25 @@
     word-wrap: normal;
 }
 
-h3{
+h3 {
     margin-bottom: -30px;
     font-weight: bold;
 }
 
-#rainbowImg{
-    width: 25vw ;
+#rainbowImg {
+    width: 25vw;
     border: 3px linen;
     border-radius: 5px;
 }
 
 @media (max-width: 600px) {
-    #rainbowImg{
+    #rainbowImg {
         width: 100%;
         border: 3px linen;
         border-radius: 5px;
-    } 
-    .container-fluid{
+    }
+
+    .container-fluid {
         width: 100%;
     }
 }

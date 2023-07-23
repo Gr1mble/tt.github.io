@@ -15,6 +15,7 @@
     border: black 2px solid;
     border-radius: 5px;
 }
+
 option {
     border: black 2px solid;
     border-radius: 5px;
@@ -44,9 +45,9 @@ option:hover {
 }
 
 @media (max-width: 600px) {
-    #rainbowImg{
+    #rainbowImg {
         width: 100%;
         border: 3px linen;
         border-radius: 5px;
-    } 
+    }
 }

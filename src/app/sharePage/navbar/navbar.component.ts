@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthService} from '../../../../backend/auth-service';
+import { AuthService } from '../../../../backend/auth-service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private authenticationSub!: Subscription;
   userAuthenticated = false;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService) { }
 
   ngOnDestroy(): void {
     this.authenticationSub.unsubscribe();
@@ -21,12 +21,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.userAuthenticated = this.authService.getIsAuthenticated();
-    this.authenticationSub = this.authService.getAuthenticatedSub().subscribe(status =>{
+    this.authenticationSub = this.authService.getAuthenticatedSub().subscribe(status => {
       this.userAuthenticated = status;
     })
   };
 
-  logOut(){
+  logOut() {
     this.authService.logOut();
   }
 

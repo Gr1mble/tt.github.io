@@ -7,7 +7,9 @@
     text-align: center;
 }
 
-.carousel, .w-100, img {
+.carousel,
+.w-100,
+img {
     margin: 0 auto;
 
     min-width: 400px;
@@ -26,7 +28,8 @@
     text-align: center;
 }
 
-p, h4 {
+p,
+h4 {
     margin: -1px auto;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -34,18 +37,23 @@ p, h4 {
 }
 
 @media (max-width: 600px) {
-    .container{
+    .container {
         margin: 0px auto;
     }
+
     .carousel {
         min-width: 0vw;
         z-index: 1;
         margin-bottom: 20vw;
     }
-    .carousel-control-prev, .carousel-control-prev-icon, .carousel-control-next, .carousel-control-next-icon{
+
+    .carousel-control-prev,
+    .carousel-control-prev-icon,
+    .carousel-control-next,
+    .carousel-control-next-icon {
         z-index: 2;
     }
-    
+
     .carousel-caption .d-inline .d-md-block {
         margin: 2vw auto;
         overflow: hidden;
@@ -54,9 +62,11 @@ p, h4 {
         text-align: center;
     }
 
-    .carousel, .w-100, img {
+    .carousel,
+    .w-100,
+    img {
         border-radius: 0px;
     }
-  
+
 
 }

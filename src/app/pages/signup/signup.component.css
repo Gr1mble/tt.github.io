@@ -1,5 +1,4 @@
-
-.container{
+.container {
     margin: 3vw auto;
     max-width: 25vw;
     text-align: center;
@@ -17,7 +16,7 @@
     word-wrap: normal;
 }
 
-.form-control{
+.form-control {
     margin-top: 5px;
     border: black 2px solid;
     border-radius: 5px;
@@ -25,15 +24,15 @@
     font-size: 20px;
 }
 
-.form-check-label{
+.form-check-label {
     padding-top: 5px;
 }
 
-.form-check-input{
+.form-check-input {
     margin-left: -25px;
 }
 
-input{
+input {
     margin-top: 5px;
     border: black 2px solid;
     border-radius: 5px;
@@ -41,22 +40,22 @@ input{
     font-size: 20px;
 }
 
-input:invalid, input:ng-invalid {
+input:invalid,
+input:ng-invalid {
     border: 2px solid red;
-  }
-  
-  input:valid {
-    border: 2px solid green;
-  }
+}
 
-p{
+input:valid {
+    border: 2px solid green;
+}
+
+p {
     font-weight: bold;
 }
 
 @media (max-width: 500px) {
-    .container{
+    .container {
         margin-top: 45px;
         max-width: max-content;
     }
 }
- 

@@ -50,10 +50,10 @@ import { AuthInterceptor } from 'backend/auth-interceptor';
     ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule
-    
+
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

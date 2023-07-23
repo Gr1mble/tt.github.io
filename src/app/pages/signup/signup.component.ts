@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../backend/auth-service';
 
 
@@ -8,33 +8,33 @@ import { AuthService } from '../../../../backend/auth-service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit{
+export class SignupComponent implements OnInit {
 
   signupForm!: FormGroup;
   pwdWarning!: String;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-      this.signupForm = new FormGroup({
-        'username': new FormControl('', [Validators.required]),
-        'password': new FormControl('', [Validators.required]),
-        'cpassword': new FormControl(''),
-        'email': new FormControl('', [Validators.required]),
-        'phonenumber': new FormControl('', [Validators.required]),
-        'games': new FormControl('', [Validators.required]),
-        'emailCheck': new FormControl('', [Validators.required]),
-        'sms': new FormControl('', [Validators.required])
-      })
+    this.signupForm = new FormGroup({
+      'username': new FormControl('', [Validators.required]),
+      'password': new FormControl('', [Validators.required]),
+      'cpassword': new FormControl(''),
+      'email': new FormControl('', [Validators.required]),
+      'phonenumber': new FormControl('', [Validators.required]),
+      'games': new FormControl('', [Validators.required]),
+      'emailCheck': new FormControl('', [Validators.required]),
+      'sms': new FormControl('', [Validators.required])
+    })
   }
 
-  onSubmit(){
+  onSubmit() {
 
     try {
-      if (this.signupForm.value.password == this.signupForm.value.cpassword){
+      if (this.signupForm.value.password == this.signupForm.value.cpassword) {
         this.authService.signupUser(this.signupForm.value.username, this.signupForm.value.password, this.signupForm.value.email, this.signupForm.value.phonenumber, this.signupForm.value.games, this.signupForm.value.emailCheck, this.signupForm.value.sms);
       } else {
-        throw(Error);
+        throw (Error);
       }
     } catch (error) {
       console.log("Passwords do not match");

@@ -1,10 +1,10 @@
-app-footer{
+app-footer {
     bottom: 0;
     left: 0;
     z-index: 9000;
     position: relative;
 }
 
-app-navbar{
+app-navbar {
     z-index: 9000;
 }

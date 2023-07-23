@@ -1,12 +1,13 @@
 .navbar-expand-lg .navbar-nav .nav-link {
-color: white;
+    color: white;
 }
 
 .navbar-expand-lg .navbar-collapse {
     background-color: black;
 }
 
-.navbar, .container-fluid {
+.navbar,
+.container-fluid {
     padding: 0;
 }
 
@@ -16,11 +17,14 @@ color: white;
     text-align: center;
 }
 
-.collapse, .navbar-collapse, .justify-content-center{
+.collapse,
+.navbar-collapse,
+.justify-content-center {
     padding-bottom: 15px;
 }
 
-.navbarPicture, .d-none d-lg-block{
+.navbarPicture,
+.d-none d-lg-block {
     border: 3px;
     border-radius: 5px;
     max-height: 36px;
@@ -39,8 +43,9 @@ body {
     font-size: 20px;
     display: inline-block;
     position: relative;
-  }
-  .nav-item:after {    
+}
+
+.nav-item:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -51,17 +56,18 @@ body {
     background: white;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
-  }
-  .nav-item:hover:after { 
-    width: 100%; 
-    left: 0; 
-  }
+}
 
-  .navbar-nav .nav-item .nav-link.active-link {
+.nav-item:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-nav .nav-item .nav-link.active-link {
     text-decoration: underline;
     text-decoration-color: white;
     text-underline-offset: 9px;
-  }
+}
 
 @media (max-width: 990px) {
     .navbar-collapse {
@@ -86,19 +92,23 @@ body {
         transition: left 300ms ease-in-out;
     }
 
-    .navbar-toggler.collapsed ~ .navbar-collapse {
+    .navbar-toggler.collapsed~.navbar-collapse {
         transition: left 500ms ease-in-out;
     }
-    .navbar-toggler, .navbar-toggler-icon{
+
+    .navbar-toggler,
+    .navbar-toggler-icon {
         float: left;
     }
-    .container-fluid{
+
+    .container-fluid {
         display: inline;
         background-color: black;
         z-index: 4;
     }
 
-    .navbarPicture, .d-lg-none{
+    .navbarPicture,
+    .d-lg-none {
         margin: 0 auto;
         margin-right: 45px;
         margin-bottom: 10px;
