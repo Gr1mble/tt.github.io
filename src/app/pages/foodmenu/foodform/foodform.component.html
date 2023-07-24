@@ -1,49 +1,56 @@
-<div class="container">
-  <h1>Menu Form</h1>
-  <br>
+<div class="container-fluid">
+  <div class="container">
 
-  <form>
-    <div class="row mb-3">
-      <label for="inputName3" class="col-sm-2 col-form-label">Racename</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputName3">
+    <form>
+      <div class="col mb-3">
+        <h1>Food Form</h1>
       </div>
-    </div>
-    <div class="row mb-3">
-      <label for="inputPhone3" class="col-sm-2 col-form-label">Phone-number</label>
-      <div class="col-sm-10">
-        <input type="tel" class="form-control" id="inputPhone3">
-        <small>Phone number is not required but appreciated if we need to contact</small>
-      </div>
-    </div>
-    <fieldset class="row mb-3">
-      <div class="col-sm-10">
-      </div>
-    </fieldset>
-    <div class="row mb-3">
-      <div class="col-sm-10 offset-sm-2">
-        <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-          <option selected>Type of item</option>
-          <option value="1">Breakfast</option>
-          <option value="2">Lunch</option>
-          <option value="3">Dinner</option>
-          <option value="4">Snacks</option>
-          <option value="5">Drinks</option>
-        </select>
-        <div class="input-group">
-          <span class="input-group-text">Item Description</span>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div>
-        <br>
-        <div class="form-check">
-          <label class="form-check-label" for="gridCheck1">
-            Does this need to be refrigerated?
-          </label>
-          <input class="form-check-input" type="checkbox" id="gridCheck1">
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Form</button>
-  </form>
 
+        <div class="col mb-3">
+          <label for="username" class="row-sm-3 row-form-label">RaceName</label>
+          <div class="row-sm-8">
+            <input type="text" class="form-control" id="username" required>
+          </div>
+
+          <div class="col mb-3">
+            <label for="phonenumber" class="row-sm-3 row-form-label">PhoneNumber</label>
+            <div class="row-sm-8">
+              <input mobMask type="tel" class="form-control" id="phonenumber" placeholder="123-456-7890"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+              <small>Phone number is not required but appreciated if we need to contact</small>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <div class="row-sm-8">
+              <select class="typeSelect">
+                <option selected>Type of item</option>
+                <option value="1">Breakfast</option>
+                <option value="2">Lunch</option>
+                <option value="3">Dinner</option>
+                <option value="4">Snacks</option>
+                <option value="5">Drinks</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <div class="row-sm-8">
+              <textarea id="freeform" name="freeform" rows="4" cols="50">Enter text here...</textarea>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+
+            <div class="col mb-3">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="Refrigerated">Refrigerated?</label>
+                <input class="form-check-input" type="checkbox" id="Refrigerated">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+  </div>
 </div>

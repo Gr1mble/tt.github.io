@@ -43,11 +43,3 @@ option:hover {
     color: #cc0000;
 
 }
-
-@media (max-width: 600px) {
-    #rainbowImg {
-        width: 100%;
-        border: 3px linen;
-        border-radius: 5px;
-    }
-}
