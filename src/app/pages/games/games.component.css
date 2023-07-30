@@ -43,3 +43,16 @@ option:hover {
     color: #cc0000;
 
 }
+
+a{
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: black;;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+#gameButtons{
+    padding: 10px;
+}

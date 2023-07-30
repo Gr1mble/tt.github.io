@@ -21,7 +21,7 @@ img {
 }
 
 .carousel-caption {
-    margin: 1vw auto;
+    margin: -1vw auto;
     overflow: hidden;
     position: sticky;
     top: 100%;

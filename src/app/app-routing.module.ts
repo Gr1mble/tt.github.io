@@ -14,6 +14,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
 import { RouteGuard } from 'backend/route-guard';
+import { RaceNotesComponent } from './pages/race-notes/race-notes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'bracketgenerator', component: BracketgeneratorComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [RouteGuard] }
+  { path: 'profile', component: ProfileComponent, canActivate: [RouteGuard] },
+  { path: 'racenotes', component: RaceNotesComponent}
 ];
 
 @NgModule({

@@ -41,6 +41,10 @@ app.get('/signin', function (req, res) {
     res.send('GET Request to Signin');
 });
 
+app.get('/racenotes', function (req, res) {
+    res.send('GET Request to Racenotes');
+});
+
 
 // End of Routes
 
@@ -97,6 +101,7 @@ app.post('/signin', (req, res) => {
         .then(() => {
             console.log('Connected to MongoDB');
 
+            
             let userFound;
 
             UserModel.findOne({ username: req.body.username })
@@ -111,7 +116,7 @@ app.post('/signin', (req, res) => {
                 })
                 .then(result => {
                     if (!result) {
-                        return res.send({ messege: 'Password is Incorrect!' });
+                        return res.send({ message: 'Password is Incorrect!' });
                     };
 
                     const token = jwt.sign({ username: userFound.username, userId: userFound._id }, "secret_string", { expiresIn: "1h" });
@@ -127,12 +132,14 @@ app.post('/signin', (req, res) => {
                     return res.send({ message: 'Error with Authentication' });
                 });
 
+
+
         })
         .catch(() => {
             console.log('Failed to connect to MongoDB');
         });
 
-});
+})
 
 
 module.exports = app;

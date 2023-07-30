@@ -23,6 +23,7 @@ import { FoodmenuComponent } from './pages/foodmenu/foodmenu.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
 import * as bodyParser from 'body-parser';
 import { AuthInterceptor } from 'backend/auth-interceptor';
+import { RaceNotesComponent } from './pages/race-notes/race-notes.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AuthInterceptor } from 'backend/auth-interceptor';
     ProfileComponent,
     FoodmenuComponent,
     FoodformComponent,
-    MobDirective
+    MobDirective,
+    RaceNotesComponent
   ],
   imports: [
     BrowserModule,
