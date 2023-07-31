@@ -18,7 +18,6 @@ import { GamesignsComponent } from './pages/games/gamesigns/gamesigns.component'
 import { BracketgeneratorComponent } from './pages/games/bracketgenerator/bracketgenerator.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodmenuComponent } from './pages/foodmenu/foodmenu.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
 import { AuthInterceptor } from 'backend/auth-interceptor';
@@ -39,7 +38,6 @@ import { PostFormComponent } from './pages/race-notes-form/post-form.component';
     BracketgeneratorComponent,
     SigninComponent,
     SignupComponent,
-    ProfileComponent,
     FoodmenuComponent,
     FoodformComponent,
     MobDirective,
