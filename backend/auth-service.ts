@@ -107,7 +107,7 @@ logOut(){
             this.token = localStorageData.token;
             this.isAuthenticated = true;
             this.authenticatedSub.next(true);
-            this.logoutTimer.setTimeout(expiresIn / 1000);
+            this.logoutTimer?.setTimeout(expiresIn / 1000);
         }
     }
   }

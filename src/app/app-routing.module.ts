@@ -14,7 +14,9 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
 import { RouteGuard } from 'backend/route-guard';
-import { RaceNotesComponent } from './pages/race-notes/race-notes.component';
+import { PostComponent } from './pages/race-notes/post.component';
+import { PostFormComponent } from './pages/race-notes-form/post-form.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,7 +32,9 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [RouteGuard] },
-  { path: 'racenotes', component: RaceNotesComponent}
+  { path: 'racenotes', component: PostComponent},
+  { path: 'data-entry',component: PostFormComponent, canActivate:[RouteGuard]},
+  { path: 'edit/:id', component: PostFormComponent, canActivate:[RouteGuard]},
 ];
 
 @NgModule({

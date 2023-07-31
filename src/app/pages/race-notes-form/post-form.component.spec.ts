@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RaceNotesComponent } from './race-notes.component';
+import { PostFormComponent } from './post-form.component';
 
-describe('RaceNotesComponent', () => {
-  let component: RaceNotesComponent;
-  let fixture: ComponentFixture<RaceNotesComponent>;
+describe('PostFormComponent', () => {
+  let component: PostFormComponent;
+  let fixture: ComponentFixture<PostFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RaceNotesComponent]
+      declarations: [PostFormComponent]
     });
-    fixture = TestBed.createComponent(RaceNotesComponent);
+    fixture = TestBed.createComponent(PostFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

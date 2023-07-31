@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="onSubmit()" [formGroup]='postForm'>
+            <div class="form-group">
+                <label for="date">Year</label>
+                <input class="form-control" formControlName="year" type="text" required>
+                <label for="entry">Entry</label>
+                <input class="form-control" formControlName="entry" type="text" required>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>
