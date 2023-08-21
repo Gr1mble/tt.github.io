@@ -18,12 +18,11 @@ import { GamesignsComponent } from './pages/games/gamesigns/gamesigns.component'
 import { BracketgeneratorComponent } from './pages/games/bracketgenerator/bracketgenerator.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { FoodmenuComponent } from './pages/foodmenu/foodmenu.component';
 import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component';
-import * as bodyParser from 'body-parser';
 import { AuthInterceptor } from 'backend/auth-interceptor';
-import { RaceNotesComponent } from './pages/race-notes/race-notes.component';
+import { PostComponent } from './pages/race-notes/post.component';
+import { PostFormComponent } from './pages/race-notes-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +38,11 @@ import { RaceNotesComponent } from './pages/race-notes/race-notes.component';
     BracketgeneratorComponent,
     SigninComponent,
     SignupComponent,
-    ProfileComponent,
     FoodmenuComponent,
     FoodformComponent,
     MobDirective,
-    RaceNotesComponent
+    PostComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
