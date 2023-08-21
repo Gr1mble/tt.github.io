@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../OneDrive/htDocs Backup/htdocs"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "htdocs",
+		"grammarly.selectors": [
+			{
+				"language": "html",
+				"scheme": "file"
+			}
+		]
+	}
+}
