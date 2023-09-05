@@ -23,6 +23,7 @@ import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component'
 import { AuthInterceptor } from 'backend/auth-interceptor';
 import { PostComponent } from './pages/race-notes/post.component';
 import { PostFormComponent } from './pages/race-notes-form/post-form.component';
+import { NotesTestingComponent } from './pages/notes-testing/notes-testing.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PostFormComponent } from './pages/race-notes-form/post-form.component';
     FoodformComponent,
     MobDirective,
     PostComponent,
-    PostFormComponent
+    PostFormComponent,
+    NotesTestingComponent
   ],
   imports: [
     BrowserModule,

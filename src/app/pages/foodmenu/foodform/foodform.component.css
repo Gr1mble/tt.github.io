@@ -27,7 +27,7 @@
 }
 
 .form-check-label {
-    padding-top: 5px;
+    padding-top: 4px;
 }
 
 .form-check-input {
@@ -50,10 +50,6 @@ textarea{
 input:invalid,
 input:ng-invalid {
     border: 2px solid red;
-}
-
-input:valid {
-    border: 2px solid green;
 }
 
 p {

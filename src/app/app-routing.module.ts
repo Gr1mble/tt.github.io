@@ -15,6 +15,7 @@ import { FoodformComponent } from './pages/foodmenu/foodform/foodform.component'
 import { RouteGuard } from 'backend/route-guard';
 import { PostComponent } from './pages/race-notes/post.component';
 import { PostFormComponent } from './pages/race-notes-form/post-form.component';
+import { NotesTestingComponent } from './pages/notes-testing/notes-testing.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'racenotes', component: PostComponent},
   { path: 'data-entry',component: PostFormComponent, canActivate:[RouteGuard]},
   { path: 'edit/:id', component: PostFormComponent, canActivate:[RouteGuard]},
+  { path: 'notesTest', component: NotesTestingComponent},
 ];
 
 @NgModule({
