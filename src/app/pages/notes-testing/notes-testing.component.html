@@ -2,12 +2,19 @@
 
     <div class="notesForm">
         
-        <div class="yearsLeftside col-3">
-            <button id="yearButton">Years</button>
+        <div class="yearsLeftside col-3 form-select">
+            <p>Years</p>
+            <button type="button" #yearInput (click)="notesYear(0)">2023</button>
+            <button type="button" #yearInput (click)="notesYear(1)">2022</button>
+            <button type="button" #yearInput (click)="notesYear(2)">2021</button>
+            <button type="button" #yearInput (click)="notesYear(3)">2020</button>
+            <button type="button" #yearInput (click)="notesYear(4)">2019</button>
+            <button type="button" #yearInput (click)="notesYear(5)">2018</button>
+
         </div>
 
         <div class="notesRightside col-9">
-            <p>Notes</p>
+            <p id="notes" #notesBox>Testing</p>
         </div>
     </div>
 
