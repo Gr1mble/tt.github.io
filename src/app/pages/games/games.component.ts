@@ -40,7 +40,8 @@ export class GamesComponent {
     ["Mars"],
     ["Woody"],
     ["Mars"],
-    ["Joltin' Joe III"]
+    ["Joltin' Joe III"],
+    ["Fong Shui"]
   ]
 
   euchreArray = [
@@ -55,7 +56,8 @@ export class GamesComponent {
     ["JakeZilla / Xmas"],
     ["Woody / Kottin"],
     ["Sassy Sara / Jukebox"],
-    ["Bob / Methy"]
+    ["Bob / Methy"],
+    ["Bob / Wise"]
   ]
   dartsArray = [
     ["Sassy Sara"],
@@ -69,7 +71,8 @@ export class GamesComponent {
     ["Woody / Kottin"],
     ["Woody / Kottin"],
     ["Kottin / Methy"],
-    ["KylePetty / Jukebox Jon"]
+    ["KylePetty / Jukebox Jon"],
+    ["Fong Shui / Cottun"]
   ]
   horseShoeArray = [
     ["Sassy Sara"],
@@ -83,6 +86,7 @@ export class GamesComponent {
     ["Sassy Sara / KylePetty"],
     ["Woody / Kottin"],
     ["Sassy Sara / Jukebox Jon"],
-    ["Sassy Sara / Joltin' Joe III"]
+    ["Sassy Sara / Joltin' Joe III"],
+    ["Fong Shui / Cottun"]
   ]
 }
