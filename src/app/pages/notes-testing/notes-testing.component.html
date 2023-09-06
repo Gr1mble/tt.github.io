@@ -1,9 +1,17 @@
 <div class="container">
 
     <div class="notesForm">
-        
-        <div class="yearsLeftside col-3 form-select">
-            <p>Years</p>
+
+        <div class="item item-1">
+            <button type="button">New Year</button>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="item item-2">
+            <p>Notes</p>
+        </div>
+        <div class="item item-3">
+
+
             <button type="button" #yearInput (click)="notesYear(0)">2023</button>
             <button type="button" #yearInput (click)="notesYear(1)">2022</button>
             <button type="button" #yearInput (click)="notesYear(2)">2021</button>
@@ -13,7 +21,8 @@
 
         </div>
 
-        <div class="notesRightside col-9">
+        <div class="item item-4">
+
             <p id="notes" #notesBox>Testing</p>
         </div>
     </div>
