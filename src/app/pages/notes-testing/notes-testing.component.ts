@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-notes-testing',
@@ -7,25 +7,17 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./notes-testing.component.css']
 })
 export class NotesTestingComponent {
-  @ViewChild('notesBox') notes!: ElementRef;
 
+  title = 'angular-material';
 
-  yearInput: number = 0;
+  constructor(private dialogRef : MatDialog){}
 
-  notesYear(yearInput: number): void {
-    this.yearInput = yearInput;
-    console.log(this.yearInput);
-
-    this.notes.nativeElement.innerHTML = this.notesArray[this.yearInput];
+  openDialog(){
+    this.dialogRef.open(NotesTestingComponent,{
+      data : {
+        name : 'Samuel'
+      }
+    });
   }
-
-  notesArray = [
-    ["Test for year 23"],
-    ["Test for year 22"],
-    ["Test for year 21"],
-    ["Test for year 20"],
-    ["Test for year 19"],
-    ["Test for year 18"]
-  ]
 
 }

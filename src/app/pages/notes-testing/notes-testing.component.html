@@ -1,30 +1,3 @@
-<div class="container">
-
-    <div class="notesForm">
-
-        <div class="item item-1">
-            <button type="button">New Year</button>
-            <input type="text" placeholder="Search">
-        </div>
-        <div class="item item-2">
-            <p>Notes</p>
-        </div>
-        <div class="item item-3">
-
-
-            <button type="button" #yearInput (click)="notesYear(0)">2023</button>
-            <button type="button" #yearInput (click)="notesYear(1)">2022</button>
-            <button type="button" #yearInput (click)="notesYear(2)">2021</button>
-            <button type="button" #yearInput (click)="notesYear(3)">2020</button>
-            <button type="button" #yearInput (click)="notesYear(4)">2019</button>
-            <button type="button" #yearInput (click)="notesYear(5)">2018</button>
-
-        </div>
-
-        <div class="item item-4">
-
-            <p id="notes" #notesBox>Testing</p>
-        </div>
-    </div>
-
-</div>
+<button class="btn btn-primary" (click)="openDialog()">
+    Click to open pop up
+  </button>

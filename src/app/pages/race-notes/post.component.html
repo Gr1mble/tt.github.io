@@ -1,31 +1,26 @@
-<div class="container">
 
-    <div class="row">
-        <div class="col">
-            <h2>Race Meeting Notes</h2>
-            
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Entry</th>
-                    <th *ngIf="isAuthenticated">Action</th>
-    
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor='let post of PostEntries; let i = index'>
-                        <td>{{post.year}}</td>
-                        <td>{{post.entry}}</td>
-                        <td *ngIf="isAuthenticated">
-                            <button class="btn btn-primary" (click)="onEdit(post.id)">Edit</button>   
-                            <button class="btn btn-danger" (click)='onDelete(post.id)'>Delete</button>
-                        </td>
-                    </tr>   
-                </tbody>
-            
-            </table>
-    
+<div class="container">
+    <div class="notesForm">
+
+        <div class="item item-1 flex">
+            <h3 id="yearsText">Years</h3>
+            <button *ngIf="isAuthenticated" type="button" class="toolButton" (click)="onNewPost()">+</button>
+        </div>
+
+        <div class="item item-2 flex">
+            <h3 #notesHeader >Notes</h3>
+            <button type="button" class="btn btn-primary" (click)="openDialog()">Open Modal</button>
+            <button *ngIf="isAuthenticated"  type="button" class="toolButton">Edit</button>
+        </div>
+
+        <div class="item item-3 flex">            
+            <button *ngFor='let post of PostEntries; let i = index' (click)='getEntryPost(post.id)'>{{post.year}}</button>   
+        </div>
+
+        <div class="item item-4 flex">
+
+            <p id="notes" #notesBox ></p>
         </div>
     </div>
+
 </div>

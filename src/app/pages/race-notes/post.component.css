@@ -1,4 +1,17 @@
-.container {
+* {
+    box-sizing: border-box
+} 
+
+.backdrop{
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
     padding-top: 100px;
     padding-bottom: 50px;
     display: block;
@@ -6,10 +19,82 @@
     height: auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    word-wrap: normal;
 }
 
-.leftside, .rightside{
-    border: 3px solid black;
-    border-radius: 5px;
+.notesForm{
+    display: flex;
+    border: 5px solid black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    max-width: 80vh;
+    max-height: 50vh;
+    margin: 0 auto;
+}
+
+.item-1{
+    box-sizing: border-box;
+    width: 30%;
+    height: 35px;
+    border-bottom: 2px solid black;
+}
+
+.item-2{
+    width: 70%;
+    height: 35px;
+    border-bottom: 2px black solid;
+    border-left: 2px black solid;
+    box-sizing: border-box;
+}
+
+.item-3{
+    width: 30%;
+    height: 20vw;;
+    overflow: auto;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+.item-4{
+    width: 70%;
+
+    border-left: 2px black solid;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 80%;
+    padding: 5px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: left;
+    font-size: 20px;
+    border: 0;
+    background: white;
+    border-bottom: .5px solid gray;
+}
+
+.toolButton {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    padding: 3px;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+button:focus, button:hover {
+    color: red;
+}
+h3, p{
+    margin: 0 auto;
+    position: absolute;
+    padding: 3px;
+}
+#yearsText{
+    margin: 0 auto;
+    padding-left: 20px;
 }

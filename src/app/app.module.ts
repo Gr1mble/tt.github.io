@@ -24,6 +24,7 @@ import { AuthInterceptor } from 'backend/auth-interceptor';
 import { PostComponent } from './pages/race-notes/post.component';
 import { PostFormComponent } from './pages/race-notes-form/post-form.component';
 import { NotesTestingComponent } from './pages/notes-testing/notes-testing.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -52,8 +53,8 @@ import { NotesTestingComponent } from './pages/notes-testing/notes-testing.compo
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    MatDialogModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
