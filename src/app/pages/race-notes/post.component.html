@@ -1,16 +1,15 @@
-
 <div class="container">
+
     <div class="notesForm">
 
         <div class="item item-1 flex">
             <h3 id="yearsText">Years</h3>
-            <button *ngIf="isAuthenticated" type="button" class="toolButton" (click)="onNewPost()">+</button>
+            <button *ngIf="isAuthenticated" type="button" class="toolButton" data-bs-toggle="modal" data-bs-target="#newModal">+</button>
         </div>
 
         <div class="item item-2 flex">
             <h3 #notesHeader >Notes</h3>
-            <button type="button" class="btn btn-primary" (click)="openDialog()">Open Modal</button>
-            <button *ngIf="isAuthenticated"  type="button" class="toolButton">Edit</button>
+            <button *ngIf="isAuthenticated && isSelected" type="button" class="toolButton" data-bs-toggle="modal" data-bs-target="#newModal" (click)="onEdit()">Edit</button>
         </div>
 
         <div class="item item-3 flex">            
@@ -18,9 +17,33 @@
         </div>
 
         <div class="item item-4 flex">
-
             <p id="notes" #notesBox ></p>
         </div>
     </div>
 
-</div>
+    </div>
+
+
+
+    <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newModalLabel">New Year</h5>
+            </div>
+            <div class="modal-body">
+                <form id="form" (ngSubmit)="onSubmit()" [formGroup]='postForm'>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input class="form-control" id="year" formControlName="year" type="text" required>
+                        <label for="entry">Entry</label>
+                        <input class="form-control" id="entry" formControlName="entry" type="text" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success toolButton" data-bs-dismiss="modal" (click)="onSubmit()">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
